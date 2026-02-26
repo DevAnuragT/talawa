@@ -154,6 +154,10 @@ jobs:
     needs: Update-Documentation
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/download-artifact@v4
+      with:
+        name: talawa-mobile-docs
+        path: talawa-mobile-docs
     - uses: dmnemec/copy_file_to_another_repo_action@v1.1.1
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB_NEW }}    
